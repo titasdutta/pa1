@@ -5,5 +5,8 @@ function parseQString(query){
     return new_query;
 }
 
-var qString = location.href.split("?")[1];
+var qString = location.href.split("?")[1].split("&")[0];
 document.getElementById("product_name").value = parseQString(qString);
+
+var image =  location.href.split("?")[1].split("&")[1];
+document.getElementById("cloth").src = image;

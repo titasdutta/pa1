@@ -60,3 +60,25 @@ input[type=text], select, textarea{
       margin-top: 0;
     }
   }
+
+img {
+    display: block;
+    margin-left: 50%;
+    margin-right: 50%;
+    width: 200px;
+    height: auto;
+}
+
+td {
+    padding:40px;
+}
+
+
+td img:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+td a {
+    text-decoration: none;
+}

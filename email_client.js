@@ -5,13 +5,20 @@ function parseQuery(query){
     return new_query;
 }
 
+function parsePrice(price){
+    return price.substring(3);
+}
+
 var product = location.href.split("?")[1].split("&")[0].split("=")[1];
 document.getElementById("body").value = "PRODUCT NAME: " + parseQuery(product);
 
 var quantity = location.href.split("?")[1].split("&")[1].split("=")[1];
 document.getElementById("body").value += '\n' + "QUANTITY: " + quantity;
 
-var pname = location.href.split("?")[1].split("&")[2].split("=")[1] + " " + location.href.split("?")[1].split("&")[3].split("=")[1];
+var price = location.href.split("?")[1].split("&")[2].split("=")[1];
+document.getElementById("body").value += '\n' + "PRICE: $" + parsePrice(price);
+
+var pname = location.href.split("?")[1].split("&")[3].split("=")[1] + " " + location.href.split("?")[1].split("&")[4].split("=")[1];
 document.getElementById("body").value += '\n' + "NAME: " + pname;
 
 var ship_address = location.href.split("?")[1].split("&")[5].split("=")[1];

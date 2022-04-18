@@ -11,6 +11,17 @@ document.getElementById("product_name").value = parseQString(qString);
 var image =  location.href.split("?")[1].split("&")[1];
 document.getElementById("cloth").src = image;
 
+var price =  location.href.split("?")[1].split("&")[2];
+document.getElementById("price").value = "$" + parseInt(price);
+
+document.getElementById("quantity").addEventListener('change', function() {
+    var quantity = document.getElementById("quantity").value;
+    console.log("GOT IN HERE");
+    if(quantity && !isNaN(quantity)){
+        document.getElementById("price").value = "$" + (parseInt(quantity)*parseInt(price));
+    }
+});
+
 // $("#submit").click(function(){
 //     alert("Are you sure you want to submit (y/n)?");
 // });
